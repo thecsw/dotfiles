@@ -27,14 +27,4 @@
  ;; If there is more than one, they won't work right.
 )
  
-(require 'autopair)
-(autopair-global-mode)
-
-(add-hook 'org-mode-hook '(lambda () (setq fill-column 80)))
-(add-hook 'org-mode-hook 'turn-on-auto-fill)
-
-(require 'git-gutter-fringe)
-(setq-default left-fringe-width  20)
-(setq-default right-fringe-width 20)
-
 (provide '.emacs)

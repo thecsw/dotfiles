@@ -67,6 +67,16 @@ There are two things you can do about this warning:
 #+BEGIN_SRC emacs-lisp
 (setq ring-bell-function 'ignore)
 #+END_SRC
+** Character limit in Org-Mode
+#+BEGIN_SRC emacs-lisp
+(add-hook 'org-mode-hook '(lambda () (setq fill-column 80)))
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
+#+END_SRC
+** Pair the braces
+#+BEGIN_SRC emacs-lisp
+(require 'autopair)
+(autopair-global-mode)
+#+END_SRC
 * Window management
 
 #+BEGIN_SRC emacs-lisp
