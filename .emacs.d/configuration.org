@@ -78,7 +78,6 @@ There are two things you can do about this warning:
 (autopair-global-mode)
 #+END_SRC
 * Window management
-
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-x <up>") 'windmove-up)
 (global-set-key (kbd "C-x <down>") 'windmove-down)
