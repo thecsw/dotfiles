@@ -1,89 +1,61 @@
-# Global properties
-#
-# The top properties below are applied to every block, but can be overridden.
-# Each block command defaults to the script name to avoid boilerplate.
-command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
-markup=pango
+#markup=pango
+
+[disk]
+command=df -h | grep '/$' | awk '{print $4}' | xargs echo 'Root:'
+interval=10
+
+[memory]
+command=free -h | grep 'Mem:' | awk '{print $7}' | xargs echo 'Mem:'
+interval=10
+
+[weather]
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+interval=60
+color=#A4C2F4
+
+[ip]
+command=hostname -i | awk '{ print "IP:" $1 }'
+interval=60
+color=#91E78C
 
 [public-ip]
 command=wget -qO - icanhazip.com
-interval=once
+interval=60
 
-[iface]
-instance=wlp3s0
-color=#00FF00
-separator=true
-interval=1
-
-[openvpn]
+[vpn]
 command=~/.config/i3blocks/tun.pl
 color=#00FF00
-interval=5
-
-# Memory usage
-#
-# The type defaults to "mem" if the instance is not specified.
-[memory]
-label=MEM
-separator=true
-interval=1
-
-# Disk usage
-#
-# The directory defaults to $HOME if the instance is not specified.
-# The script may be called with a optional argument to set the alert
-# (defaults to 10 for 10%).
-[disk]
-label=ROOT
-instance=/mnt
 interval=10
 
-# Battery indicator
-#
-# The battery instance defaults to 0.
 [battery]
-label=BAT
-#label=⚡
-instance=0
-interval=30
+command=~/.config/i3blocks/battery
+interval=10
 
-# Temperature
-#
-# Support multiple chips, though lm-sensors.
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
-[temperature]
-label=TEMP
-#label=🌡️
-interval=30
-
-[load_average]
-interval=30
-
-# Date Time
 [time]
 command=date '+%d-%m-%Y %H:%M:%S'
 interval=1
 separator=true
 
+[volume]
+command=~/.config/i3blocks/volume
+#LABEL=♪
+LABEL=VOL
+interval=60
+signal=10
+#STEP=5%
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+
+[load]
+command=uptime | sed -E 's/.*average: ([^,]+), .*/\1/g'
+interval=30
+
+[mail]
+command=ls ~/.mail/*/INBOX/new | wc -l  | xargs echo 📬
+interval=10
+
 [pacman]
 full_text=c ·
 command=echo "· ${full_text~~}"
 color=#FFFF00
-
-# Key indicators
-#
-# Add the following bindings to i3 config file:
-#
-# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-[keyindicator]
-instance=CAPS
-interval=once
-signal=11
-
-[mail]
-label=📬
-command=ls ~/.mail/*/INBOX/new | wc -l
-interval=10
