@@ -7,6 +7,7 @@ set -Ux GOPATH /home/thecsw/go
 set -gx PATH $GOPATH/bin $PATH
 set -gx PATH /home/thecsw/.local/bin $PATH
 set -gx PATH /home/thecsw/gits/plan9/bin $PATH
+set -gx PATH /opt/Citrix/ICAClient $PATH
 set -gx TERMINAL urxvt
 set -gx EDITOR emacsclient -nw
 set -gx PAGER less
@@ -16,13 +17,25 @@ function fish_greeting
     echo -e "\nSo you're back... about time..."
 end
 
-# # acme
+# acme
 function acme
     acme_t -f /home/thecsw/gits/plan9/font/lucm/euro.9.font $argv &;disown
 end	
 
+# libre
+function libre
+    libreoffice $argv &;disown
+end
+
+# open
+function djvu
+    evince $argv &;disown
+end
+
 alias em="emacsclient -nw"
+alias r="ranger"
 alias x="startx"
+alias nani="figlet nani"
 
 abbr gco "git checkout"
 abbr gb "git branch"
@@ -33,6 +46,27 @@ abbr youtube-get "youtube-dl --get-filename -o '%(title)s.%(ext)s' --restrict-fi
 abbr youtube-playlist "youtube-dl -f '(bestaudio)[protocol^=http]' --extract-audio --audio-format mp3 -o '%(title)s.%(ext)s'"
 abbr youtube-download "youtube-dl -f '(bestvideo+bestaudio)[protocol^=http]' -o '%(title)s.%(ext)s' --ignore-errors"
 
+abbr m "udevil mount"
+abbr um "udevil umount"
+
+abbr v "xclip -o"
+abbr c "xclip -i"
+
 function youtube-play
     youtube-dl --ignore-errors -o - $argv | mpv -
+end
+
+# Start X at login
+if status is-login	
+   if test -z "$DISPLAY" -a $XDG_VTNR = 1
+      exec startx -- -keeptty	
+   end
+end
+
+if set -q SSH_TTY
+   set -g fish_color_host brred
+end
+
+function su
+   command su --shell=/usr/bin/fish $argv
 end

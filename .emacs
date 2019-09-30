@@ -36,4 +36,5 @@
  '(line-number ((t (:inherit nil))))
  '(linum ((t (:background "unspecified-bg" :foreground "#565761" :slant italic)))))
 
+(global-set-key (kbd "<f1>") 'shell)
 (provide '.emacs)

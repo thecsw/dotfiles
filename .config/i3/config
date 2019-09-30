@@ -23,6 +23,10 @@ bindsym $mod+g exec $term -e ranger
 bindsym $mod+l exec $term -e nnn
 bindsym $mod+t exec telegram-desktop
 
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
+
 # Our pretty gaps
 for_window [class=^.*] border pixel 2
 gaps inner 4
@@ -221,7 +225,7 @@ bar {
 
 # Some things to do on startup
 #exec --no-startup-id "udevil mount /dev/sda"
-exec --no-startup-id "wal -q -i ~/.config/wallpapers/2018-cyberpunk-2077-4k-n6.jpg"
+exec --no-startup-id "wal -q -i ~/.config/wallpapers/gabriel-gajdos-nexus-by-gabrielgajdos-dd1s3ti.jpg"
 
 exec --no-startup-id "compton"
 

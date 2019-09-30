@@ -53,7 +53,7 @@ interval=30
 
 [mail]
 command=ls ~/.mail/*/INBOX/new | wc -l  | xargs echo 📬
-interval=10
+interval=5
 
 [pacman]
 full_text=c ·
