@@ -23,7 +23,7 @@
  '(org-log-done (quote time))
  '(package-selected-packages
    (quote
-    (matlab-mode gruvbox-theme htmlize powerline evil-snipe goto-chg w3m magit undo-tree cquery dashboard clang-format yaml-mode dracula-theme solidity-flycheck git-gutter-fringe solidity-mode go-gopath markdown-mode+ markdown-mode autopair go-gen-test go-scratch go-complete go-autocomplete)))
+    (tramp smex irony-eldoc company-irony company-c-headers matlab-mode gruvbox-theme htmlize powerline evil-snipe goto-chg w3m magit undo-tree cquery dashboard clang-format yaml-mode dracula-theme solidity-flycheck git-gutter-fringe solidity-mode go-gopath markdown-mode+ markdown-mode autopair go-gen-test go-scratch go-complete go-autocomplete)))
  '(pdf-view-midnight-colors (quote ("#fdf4c1" . "#32302f")))
  '(save-place-mode t)
  '(show-paren-mode t))
@@ -37,5 +37,16 @@
  '(line-number ((t (:inherit nil))))
  '(linum ((t (:background "unspecified-bg" :foreground "#565761" :slant italic)))))
 
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-irony))
+
+
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+(setq tramp-default-method "ssh")
 (global-set-key (kbd "<f1>") 'shell)
+(global-set-key (kbd "M-x") 'smex)
 (provide '.emacs)
