@@ -14,19 +14,43 @@
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(blink-cursor-mode t)
- '(custom-enabled-themes (quote (deeper-blue)))
- '(custom-safe-themes
-   (quote
-    ("551b18591d04da8b0f8305d3365c659ee591764dfde20f265631127d77ec40a6" "b583823b9ee1573074e7cbfd63623fe844030d911e9279a7c8a5d16de7df0ed0" "585942bb24cab2d4b2f74977ac3ba6ddbd888e3776b9d2f993c5704aa8bb4739" "8f97d5ec8a774485296e366fdde6ff5589cf9e319a584b845b6f7fa788c9fa9a" "a22f40b63f9bc0a69ebc8ba4fbc6b452a4e3f84b80590ba0a92b4ff599e53ad0" "08ed410f71bd79e1f7dfb03d7defa478047a47149ff7b0a93c854b1ff55e9807" "15006b639ac371eaaf6fa63e59f0078c6ec2f989d5cd15a91de2dab2d1d9ebf4" "73eacaf368e16cf41b125a1b6d3587308224d745fed432d641c54883ca3c55f0" "bcc4dcf3ab49551bdb912b3b2bb88a428f45b18995cab2e4d453537a9f1e042a" "7e13dae26544cdfb7f78f6a0e01a032c350b76d9846e7420e40e7f1a02d0ffd9" "274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e")))
+ '(custom-safe-themes nil)
+ '(fci-rule-color "#5B6268")
  '(font-use-system-font t)
  '(initial-buffer-choice t)
+ '(jdee-db-active-breakpoint-face-colors (cons "#2b2a27" "#ff5d38"))
+ '(jdee-db-requested-breakpoint-face-colors (cons "#2b2a27" "#98be65"))
+ '(jdee-db-spec-breakpoint-face-colors (cons "#2b2a27" "#3f444a"))
+ '(objed-cursor-color "#ff5d38")
  '(org-log-done (quote time))
  '(package-selected-packages
    (quote
-    (tramp smex irony-eldoc company-irony company-c-headers matlab-mode gruvbox-theme htmlize powerline evil-snipe goto-chg w3m magit undo-tree cquery dashboard clang-format yaml-mode dracula-theme solidity-flycheck git-gutter-fringe solidity-mode go-gopath markdown-mode+ markdown-mode autopair go-gen-test go-scratch go-complete go-autocomplete)))
+    (org-ref doom-themes tramp smex irony-eldoc company-irony company-c-headers matlab-mode gruvbox-theme htmlize powerline evil-snipe goto-chg w3m magit undo-tree cquery dashboard clang-format yaml-mode dracula-theme solidity-flycheck git-gutter-fringe solidity-mode go-gopath markdown-mode+ markdown-mode autopair go-gen-test go-scratch go-complete go-autocomplete)))
  '(pdf-view-midnight-colors (quote ("#fdf4c1" . "#32302f")))
  '(save-place-mode t)
- '(show-paren-mode t))
+ '(show-paren-mode t)
+ '(vc-annotate-background "#2b2a27")
+ '(vc-annotate-color-map
+   (list
+    (cons 20 "#98be65")
+    (cons 40 "#a4c551")
+    (cons 60 "#b0cc3d")
+    (cons 80 "#bcd42a")
+    (cons 100 "#c1a623")
+    (cons 120 "#c5781c")
+    (cons 140 "#cb4b16")
+    (cons 160 "#c95a58")
+    (cons 180 "#c7699a")
+    (cons 200 "#c678dd")
+    (cons 220 "#d96fa6")
+    (cons 240 "#ec666f")
+    (cons 260 "#ff5d38")
+    (cons 280 "#cf563c")
+    (cons 300 "#9f5041")
+    (cons 320 "#6f4a45")
+    (cons 340 "#5B6268")
+    (cons 360 "#5B6268")))
+ '(vc-annotate-very-old-color nil))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -37,16 +61,6 @@
  '(line-number ((t (:inherit nil))))
  '(linum ((t (:background "unspecified-bg" :foreground "#565761" :slant italic)))))
 
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-irony))
-
-
-(add-hook 'c++-mode-hook 'irony-mode)
-(add-hook 'c-mode-hook 'irony-mode)
-(add-hook 'objc-mode-hook 'irony-mode)
-
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-(setq tramp-default-method "ssh")
-(global-set-key (kbd "<f1>") 'shell)
-(global-set-key (kbd "M-x") 'smex)
+(load-theme 'doom-spacegrey t)
 (provide '.emacs)
