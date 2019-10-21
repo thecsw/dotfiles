@@ -1,9 +1,11 @@
 ;;; -*- coding: utf-8 -*-
-(("/home/thecsw/go/src/github.com/thecsw/mira/auth.go" . 1543)
- ("/home/thecsw/go/src/github.com/thecsw/mira/reddit.go" . 3030)
- ("/home/thecsw/.emacs.d/recentf" . 1504)
+(("/home/thecsw/.emacs.d/recentf" . 1504)
  ("/home/thecsw/.emacs.d/.cache/treemacs-persist" . 159)
+ ("/home/thecsw/gits/dotfiles/"
+  (dired-filename . "/home/thecsw/gits/dotfiles/.emacs"))
  ("/home/thecsw/.emacs" . 2787)
+ ("/home/thecsw/go/src/github.com/thecsw/mira/auth.go" . 1543)
+ ("/home/thecsw/go/src/github.com/thecsw/mira/reddit.go" . 3030)
  ("/home/thecsw/"
   (dired-filename . "/home/thecsw/doc"))
  ("/home/thecsw/go/src/github.com/thecsw/mira/reddit_interface.go" . 15)
@@ -57,8 +59,6 @@
   (dired-filename . "/home/thecsw/gits/cover-letters/cover_github"))
  ("/home/thecsw/gits/cover-letters/.gitignore" . 10)
  ("/home/thecsw/doc/classes/SOC335/Statements/Statement2/main.org" . 599)
- ("/home/thecsw/gits/dotfiles/"
-  (dired-filename . "/home/thecsw/gits/dotfiles/.emacs"))
  ("/home/thecsw/.emacs.d/configuration.org" . 3413)
  ("/home/thecsw/gits/docs/research/mathugra_2019/"
   (dired-filename . "/home/thecsw/gits/docs/research/mathugra_2019/mathugra.pdf"))
@@ -450,6 +450,4 @@
  ("/home/thecsw/go/src/github.com/isacikgoz/gitin/cli/status.go" . 4549)
  ("/home/thecsw/go/src/github.com/stretchr/testify/assert/assertion_forward.go" . 38951)
  ("/home/thecsw/go/src/github.com/stretchr/testify/assert/assertions_test.go" . 46587)
- ("/home/thecsw/.local/share/omf/themes/l/fish_prompt.fish" . 358)
- ("/home/thecsw/go/src/github.com/thecsw/mira/examples/stream_comment_replies/"
-  (dired-filename . "/home/thecsw/go/src/github.com/thecsw/mira/examples/stream_comment_replies/main.go")))
+ ("/home/thecsw/.local/share/omf/themes/l/fish_prompt.fish" . 358))
