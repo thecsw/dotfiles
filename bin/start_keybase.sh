@@ -3,6 +3,6 @@
 echo "Starting keybase service..."
 keybase service&;
 echo "Mounting KBFS to ./keybase..."
-kbfsfuse /home/thecsw/doc/remotes/keybase&;
-echo "Freeing jobs..."
-disown;
+kbfsfuse /keybase
+#echo "Freeing jobs..."
+#disown;
