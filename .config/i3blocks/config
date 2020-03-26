@@ -1,5 +1,5 @@
 separator_block_width=15
-#markup=pango
+markup=iosevka
 
 [disk]
 command=df -h | grep '/$' | awk '{print $4}' | xargs echo 'Root:'
@@ -10,7 +10,7 @@ command=free -h | grep 'Mem:' | awk '{print $7}' | xargs echo 'Mem:'
 interval=10
 
 [weather]
-command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | sed 's/.*out of queries.*/Weather is Busy/g' | xargs echo
 interval=60
 color=#A4C2F4
 
@@ -57,5 +57,5 @@ interval=5
 
 [pacman]
 full_text=c ·
-command=echo "· ${full_text~~}"
+command=echo ". ${full_text~~}"
 color=#FFFF00
