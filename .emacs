@@ -14,7 +14,10 @@
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(blink-cursor-mode t)
- '(custom-safe-themes nil)
+ '(custom-enabled-themes (quote (abyss)))
+ '(custom-safe-themes
+   (quote
+    ("4c9366a045fff3296b1b0565c181732bc9b103fe2a94dbe1f1159e6c4dfa9463" "36f17556e827b41b63fe9375dbeeb4989d4976fe51cd0506968c6a41d2a7c9f8" "14a4bbd2207617728ea504ea9aa48416999a456db9f10e7d74baab896301d8a3" "ab0e54d683d251ceee2b7c9de7cb486a960a29fb84b56acbff86a355c7d96ed8" "08ed410f71bd79e1f7dfb03d7defa478047a47149ff7b0a93c854b1ff55e9807" "ffe7b31b6fb3dae583b45ef71c7efdf50a017db40b8dcd7b0b3665c30f186dfc" "15006b639ac371eaaf6fa63e59f0078c6ec2f989d5cd15a91de2dab2d1d9ebf4" "73eacaf368e16cf41b125a1b6d3587308224d745fed432d641c54883ca3c55f0" "7e13dae26544cdfb7f78f6a0e01a032c350b76d9846e7420e40e7f1a02d0ffd9" "bcc4dcf3ab49551bdb912b3b2bb88a428f45b18995cab2e4d453537a9f1e042a" "543810bda3d88d3172bea79fd4c1446a0f3f7bf2027fb3433283f00c1771b915" "d8dc153c58354d612b2576fea87fe676a3a5d43bcc71170c62ddde4a1ad9e1fb")))
  '(fci-rule-color "#5B6268")
  '(font-use-system-font t)
  '(initial-buffer-choice t)
@@ -58,9 +61,16 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "unspecified-bg" :foreground "#f8f8f2" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
+ '(diff-function ((t (:inherit nil))))
  '(line-number ((t (:inherit nil))))
- '(linum ((t (:background "unspecified-bg" :foreground "#565761" :slant italic)))))
+ '(linum ((t (:background "unspecified-bg" :foreground "#565761" :slant italic))))
+ '(magit-diff-added ((t (:foreground "#22aa22"))))
+ '(magit-diff-added-highlight ((t (:background "color-233" :foreground "#22aa22"))))
+ '(magit-diff-context-highlight ((t (:background "color-233" :foreground "brightyellow"))))
+ '(magit-diff-file-heading-highlight ((t (:foreground "magenta"))))
+ '(magit-diff-removed ((t (:foreground "#aa2222"))))
+ '(magit-diff-removed-highlight ((t (:background "color-233" :foreground "#aa2222"))))
+ '(magit-section-highlight ((t (:background "color-232" :foreground "brightmagenta" :weight bold)))))
 
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-(load-theme 'doom-spacegrey t)
 (provide '.emacs)
