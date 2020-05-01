@@ -28,7 +28,7 @@
  '(org-log-done (quote time))
  '(package-selected-packages
    (quote
-    (org-ref doom-themes tramp smex irony-eldoc company-irony company-c-headers matlab-mode gruvbox-theme htmlize powerline evil-snipe goto-chg w3m magit undo-tree cquery dashboard clang-format yaml-mode dracula-theme solidity-flycheck git-gutter-fringe solidity-mode go-gopath markdown-mode+ markdown-mode autopair go-gen-test go-scratch go-complete go-autocomplete)))
+    (dot-mode olivetti format-all caddyfile-mode org-ref doom-themes tramp smex irony-eldoc company-irony company-c-headers matlab-mode gruvbox-theme htmlize powerline evil-snipe goto-chg w3m magit undo-tree cquery dashboard clang-format yaml-mode dracula-theme solidity-flycheck git-gutter-fringe solidity-mode go-gopath markdown-mode+ markdown-mode autopair go-gen-test go-scratch go-complete go-autocomplete)))
  '(pdf-view-midnight-colors (quote ("#fdf4c1" . "#32302f")))
  '(save-place-mode t)
  '(show-paren-mode t)
@@ -72,5 +72,4 @@
  '(magit-diff-removed-highlight ((t (:background "color-233" :foreground "#aa2222"))))
  '(magit-section-highlight ((t (:background "color-232" :foreground "brightmagenta" :weight bold)))))
 
-(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 (provide '.emacs)
