@@ -5,7 +5,7 @@
 #comment
 
 #status --is-interactive; and source (jump shell fish | psub)
-status --is-interactive; and source (pyenv init -|psub)
+#status --is-interactive; and source (pyenv init -|psub)
 set -Ux GOPATH /home/thecsw/go
 set -gx PATH $GOPATH/bin $PATH
 set -gx PATH /home/thecsw/.local/bin $PATH
