@@ -1,0 +1,61 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+window:
+  dimensions:
+    columns: 100
+    lines: 30
+  padding:
+    x: 4
+    y: 4
+  dynamic_padding: true
+  decorations: full
+  startup_mode: Windowed
+  title: term
+  class:
+    instance: Alacritty
+    general: Alacritty
+  gtk_theme_variant: dark
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+font:
+  normal:
+    family: DejaVu Sans Mono for Powerline
+  size: 10.5
+  use_thin_strokes: false
+
+draw_bold_text_with_bright_colors: true
+
+colors:
+  primary:
+    background: '#1d1f21'
+    foreground: '#c5c8c6'
+  cursor:
+    text: '#000000'
+    cursor: '#ffffff'
+
+background_opacity: 1.0
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
+dynamic_title: false
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
+live_config_reload: true
+
+shell:
+  program: /usr/bin/tmux
+
+alt_send_esc: true
+
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+  hide_when_typing: true
