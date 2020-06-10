@@ -23,19 +23,9 @@ function fish_greeting
     echo -e "\nSo you're back... about time..."
 end
 
-# acme
-function acme
-    acme_t -f /home/thecsw/gits/plan9/font/lucm/euro.9.font $argv &;disown
-end	
-
 # libre
 function libre
     libreoffice $argv &;disown
-end
-
-# open
-function djvu
-    evince $argv &;disown
 end
 
 function play
@@ -67,21 +57,8 @@ function youtube-download
     notify-send "Download Complete" $video_name
 end
 
-abbr m "udevil mount"
-abbr um "udevil umount"
-
-#abbr v "xclip -o"
-#abbr c "xclip -i"
-
 function youtube-play
     youtube-dl --ignore-errors -o - $argv | mpv -
-end
-
-# Start X at login
-if status is-login	
-   if test -z "$DISPLAY" -a $XDG_VTNR = 1
-      exec startx -- -keeptty	
-   end
 end
 
 if set -q SSH_TTY
